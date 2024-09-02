@@ -50,3 +50,8 @@ int main(void)
   return 0;
 }
 ```
+And you can do :
+
+```
+gcc main.c -o <you_program_name> -L. -lasmprintf
+```
