@@ -6,43 +6,33 @@ global my_putnbr
 extern my_putchar
 
 my_putnbr:
-    ; Check if the number is less than 0
     cmp rdi, 0
-    jge .positive_part      ; Jump if nb >= 0
-
-    ; Handle negative numbers
+    jge .positive_part
     mov r8, rdi
-    mov rdi, '-'            ; Load '-' into rsi (for my_putchar)
-    call my_putchar         ; Print '-'
+    mov rdi, '-'
+    call my_putchar
     mov rdi, r8
-
-    ; Negate the number
     neg rdi
 
 .positive_part:
-    ; Check if the number is less than 10
     cmp rdi, 10
-    jl .print_single_digit   ; If nb < 10, print directly
-
-    ; Recursive call for numbers >= 10
+    jl .print_single_digit
     mov rax, rdi
-    xor rdx, rdx             ; Clear rdx before division
+    xor rdx, rdx
     mov rcx, 10
-    div rcx                  ; rax = rdi / 10, rdx = rdi % 10
-
-    push rdx                 ; Save the remainder (last digit) on the stack
-    mov rdi, rax             ; Prepare the argument for the recursive call
-    call my_putnbr           ; Recursive call my_putnbr(nb / 10)
-
-    pop rax                  ; Restore the remainder (last digit)
-    add al, '0'              ; Convert digit to ASCII
-    mov rsi, rax             ; Move the ASCII character to rsi
+    div rcx
+    push rdx
     mov rdi, rax
-    call my_putchar          ; Print the last digit
+    call my_putnbr
+    pop rax
+    add al, '0'
+    mov rsi, rax
+    mov rdi, rax
+    call my_putchar
     ret
 
 .print_single_digit:
-    add dil, '0'             ; Convert single digit to ASCII
-    mov rsi, rdi             ; Move the ASCII character to rsi
-    call my_putchar          ; Print the single digit
+    add dil, '0'
+    mov rsi, rdi
+    call my_putchar
     ret
