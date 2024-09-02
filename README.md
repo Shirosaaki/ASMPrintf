@@ -5,7 +5,7 @@ I will recode printf in asm
 
 I'm learning ASM, and for my training, I would like to recode printf
 
-but with almost modifications :
+but with some modifications :
 
 * **6** max parameters (without first string)
 * **%** of base, so -> %d %s %c %i
