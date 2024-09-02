@@ -8,7 +8,7 @@ I'm learning ASM, and for my training, I would like to recode printf
 but with almost modifications :
 
 * **6** max parameters (without originel string)
-* **%** of base, so -> %d %s %c %i %b (the last one is for the fun)
+* **%** of base, so -> %d %s %c %i
 * He return void
 
 ## Requirements
