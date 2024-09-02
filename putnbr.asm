@@ -2,7 +2,6 @@
 
 section .text
 global my_putnbr
-
 extern my_putchar
 
 my_putnbr:

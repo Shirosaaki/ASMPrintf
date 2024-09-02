@@ -7,6 +7,11 @@ extern my_putnbr
 extern my_putchar
 
 asmprintf:
-    mov rdi, rsi
-    call my_putnbr
+    mov r15, r10
+    mov r10, rsi
+    mov r11, rdx
+    mov r12, rcx
+    mov r13, r8
+    mov r14, r9
+    call my_putstr
     ret
