@@ -7,7 +7,7 @@ I'm learning ASM, and for my training, I would like to recode printf
 
 but with almost modifications :
 
-* **6** max parameters (without originel string)
+* **6** max parameters (without first string)
 * **%** of base, so -> %d %s %c %i
 * He return void
 
